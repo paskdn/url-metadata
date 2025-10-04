@@ -22,7 +22,7 @@ v5.1.0+ Protects against:
 - Infinite redirect loops
 - SSRF attacks via [request-filtering-agent](https://www.npmjs.com/package/request-filtering-agent) in Node.js v18+ (custom options available)
 
-To report a bug or request a feature please open an issue or pull request in [GitHub](https://github.com/laurengarcia/url-metadata). Please read the `Troubleshooting` section below *before* filing a bug.
+To report a bug or request a feature please open an issue or pull request in [GitHub](https://github.com/paskdn/url-metadata). Please read the `Troubleshooting` section below *before* filing a bug.
 
 
 ## Install
@@ -33,6 +33,31 @@ npm install url-metadata --save
 ```
 
 ## Usage
+
+### Browser (CDN)
+
+To use this package directly in the browser, you can use a CDN like unpkg or jsDelivr. Include the following script tag in your HTML:
+
+```html
+<script src="https://unpkg.com/url-metadata"></script>
+<script>
+  // The library is available under the global variable 'urlMetadata'
+  const url = 'https://www.npmjs.com/package/url-metadata';
+  
+  // Use a CORS proxy to avoid CORS issues in the browser
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+  urlMetadata(proxyUrl + url)
+    .then((metadata) => {
+      console.log(metadata);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+</script>
+```
+
+### Node.js
 
 In your project file:
 ```javascript

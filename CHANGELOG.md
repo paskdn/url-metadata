@@ -1,5 +1,12 @@
 # CHANGELOG
 
+6.0.0
+- Add browser build process to create a minified file for direct browser usage.
+- Add `dist/url-metadata.min.js` for use in `<script>` tags.
+- Add `example-browser` to demonstrate CDN usage.
+- Update `package.json` with `files`, `unpkg`, and `jsdelivr` fields.
+- Update author and repository information.
+
 5.2.2
 - add og:image:alt to metadata returned
 - issue #103: improve Next.js support, add /example-nextjs directory
